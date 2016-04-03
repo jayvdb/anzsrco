@@ -2,8 +2,8 @@
 ANZSRC RDF ocnversion:
 ======================
 
-
-This project contains a set of pythonscripts to generate ANZSRC ontologies.
+This project contains a set of python scripts to generate ANZSRC ontologies.
+Python 2.7 and 3.3 or higher are supported.
 
 BUILD:
 ======
