@@ -118,7 +118,7 @@ def genfor08():
     print('FOR')
     print('Divisions (22): %d' % len(division))
     print('Groups (157): %d' % len(group))
-    print('Field (1238):' % len(field))
+    print('Field (1238): %d' % len(field))
 
     for div in division.items():
         createNode(g, FOR08, FOR08.FOR2, '%02d' % div[0], div[1], None)
