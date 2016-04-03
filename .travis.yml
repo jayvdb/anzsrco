@@ -8,10 +8,13 @@ python:
   - pypy
   - pypy3
 
-script:
+install:
   # The dependency ipython uses requirement markers that are not understood
   # by setuptools 12.0.5 which is the current version in the default Travis-CI
   # environment.
   - pip install --upgrade setuptools
   - python bootstrap.py
   - ./bin/buildout
+
+script:
+  - ./bin/genanzsrc
