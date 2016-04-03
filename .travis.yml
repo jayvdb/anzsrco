@@ -13,7 +13,7 @@ install:
   # by setuptools 12.0.5 which is the current version in the default Travis-CI
   # environment.
   - pip install --upgrade setuptools
-  - pip install rdflib==3.4.0
+  #- pip install rdflib==3.4.0
   - python bootstrap.py
   - ./bin/buildout
 
