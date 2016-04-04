@@ -2,15 +2,20 @@ from datetime import date
 from rdflib import Namespace, Literal, URIRef, Graph
 
 ANZSRC = Namespace(u'http://purl.org/asc/1297.0/')
-ANZSRCVIVO = Namespace("http://purl.org/asc/1297.0/vivo.rdf")
+ANZSRCVIVO = ANZSRC.term(u'vivo.rdf')
 
-SEO = Namespace(u'http://purl.org/asc/1297.0/seo/')
-SEO08 = Namespace(u'http://purl.org/asc/1297.0/2008/seo/')
-SEO98 = Namespace(u'http://purl.org/asc/1297.0/1998/seo/')
-FOR = Namespace(u'http://purl.org/asc/1297.0/for/')
-FOR08 = Namespace(u'http://purl.org/asc/1297.0/2008/for/')
-RFCD = Namespace(u'http://purl.org/asc/1297.0/1998/rfcd/')
-TOA = Namespace(u'http://purl.org/asc/1297.0/1993/toa/')
+SEO = ANZSRC[u'seo/']
+FOR = ANZSRC[u'for/']
+
+ANZSRC08 = Namespace(u'http://purl.org/asc/1297.0/2008/')
+ANZSRC98 = Namespace(u'http://purl.org/asc/1297.0/1998/')
+ANZSRC93 = Namespace(u'http://purl.org/asc/1297.0/1993/')
+
+SEO08 = ANZSRC08[u'seo/']
+SEO98 = ANZSRC98[u'seo/']
+FOR08 = ANZSRC08[u'for/']
+RFCD = ANZSRC98['rfcd/']
+TOA = ANZSRC93[u'toa/']
 
 OWL = Namespace(u'http://www.w3.org/2002/07/owl#')
 RDF = Namespace(u'http://www.w3.org/1999/02/22-rdf-syntax-ns#')
