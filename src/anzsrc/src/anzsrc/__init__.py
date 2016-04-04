@@ -32,14 +32,15 @@ def ontoversion(g, ns):
     # dcterms:hasVersion ponits to another version of the same thing.
     # owl:versionInfo is an annotation property. (might be used to describe
     # changes)
+    ns_node = URIRef(ns)
     if not isinstance(ns, Namespace):
         ns = Namespace(ns)
 
-    g.add((ns, OWL.versionInfo, ns.term(u'0.2')))
-    g.add((ns, OWL.priorVersion, ns.term(u'0.1')))
+    g.add((ns_node, OWL.versionInfo, ns.term(u'0.2')))
+    g.add((ns_node, OWL.priorVersion, ns.term(u'0.1')))
     # g.add((ns, DCTERMS.hasVersion, ns + u'/0.2'))
     # duplicate the node ns with correct versioned URI
-    for (s, p, o) in g.triples((ns, None, None)):
+    for (s, p, o) in g.triples((ns_node, None, None)):
         g.add((ns.term(u'0.2'), p, o))
 
 
@@ -47,6 +48,9 @@ def ontoannot(g, ns):
     """
     add dc annotations to ontology.
     """
+    if not isinstance(ns, URIRef):
+        ns = URIRef(ns)
+
     g.add((ns, DC.creator, Literal(u'Griffith University')))
     g.add((ns, DC.creator, Literal(u'University of Southern Queensland')))
     g.add((ns, DC.date, Literal(date.today().isoformat())))
