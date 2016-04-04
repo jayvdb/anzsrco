@@ -1,4 +1,4 @@
-from rdflib import Graph, Literal
+from rdflib import Graph, Literal, URIRef
 from anzsrc import (TOA, RDF, OWL, RDFS, SKOS, VIVO, DC,
                     ontoannot, ontoversion)
 
@@ -7,13 +7,13 @@ def gentoa():
     g = Graph()
 
     # statements about the ontology itself
-    g.add((TOA, RDF.type, OWL.Ontology))
-    g.add((TOA, RDF.type, SKOS.ConceptScheme))
-    g.add((TOA, RDFS.label, Literal(u'TOA 1993 Ontology')))
-    g.add((TOA, RDFS.comment, Literal(u'An ontology that provides classes '
+    g.add((URIRef(TOA), RDF.type, OWL.Ontology))
+    g.add((URIRef(TOA), RDF.type, SKOS.ConceptScheme))
+    g.add((URIRef(TOA), RDFS.label, Literal(u'TOA 1993 Ontology')))
+    g.add((URIRef(TOA), RDFS.comment, Literal(u'An ontology that provides classes '
                 u'codes and hierarchical information about ASRC/ANZSRC '
                 u'Type of Activity definitions.')))
-    g.add((TOA, DC.title, Literal(u"Australian and New Zealand Standard "
+    g.add((URIRef(TOA), DC.title, Literal(u"Australian and New Zealand Standard "
                                     u"Research Classification (ANZSRC): "
                                     u"Type of Activity.", lang=u"en")))
     ontoannot(g, TOA)
