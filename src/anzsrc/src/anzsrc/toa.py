@@ -36,7 +36,7 @@ def gentoa():
                 u'without looking for long term benefits other than the '
                 u'advancement of knowledge.')))
     g.add((toa, SKOS.prefLabel, Literal(u'Pure basic research', lang=u"en")))
-    g.add((TOA, SKOS.hasTopConcept, toa))
+    g.add((URIRef(TOA), SKOS.hasTopConcept, toa))
     g.add((toa, SKOS.inScheme, TOA))
     # Strategic basic research
     toa = TOA.term(u'StrategicBasicResearch')
@@ -50,7 +50,7 @@ def gentoa():
                 u'base of knowledge necessary for the solution of recognised '
                 u'practical problems.')))
     g.add((toa, SKOS.prefLabel, Literal(u'Strategic basic research', lang=u"en")))
-    g.add((TOA, SKOS.hasTopConcept, toa))
+    g.add((URIRef(TOA), SKOS.hasTopConcept, toa))
     g.add((toa, SKOS.inScheme, TOA))
     # Applied research
     toa = TOA.term(u'AppliedResearch')
@@ -64,7 +64,7 @@ def gentoa():
                 u'or to determine new ways of achieving some specific and '
                 u'predetermined objectives.')))
     g.add((toa, SKOS.prefLabel, Literal(u'Applied research', lang=u"en")))
-    g.add((TOA, SKOS.hasTopConcept, toa))
+    g.add((URIRef(TOA), SKOS.hasTopConcept, toa))
     g.add((toa, SKOS.inScheme, TOA))
     # Experimental development
     toa = TOA.term(u'ExperimentalDevelopment')
@@ -78,6 +78,6 @@ def gentoa():
                 u' systems and services, or to improving substantially those '
                 u'already produced or installed.')))
     g.add((toa, SKOS.prefLabel, Literal(u'Experimental development', lang=u"en")))
-    g.add((TOA, SKOS.hasTopConcept, toa))
+    g.add((URIRef(TOA), SKOS.hasTopConcept, toa))
     g.add((toa, SKOS.inScheme, TOA))
     return g
