@@ -69,7 +69,7 @@ def ontoannot(g, ns):
 
 
 def createNode(g, ns, class_, code, name, broader):
-    codeuri = ns.term(code)
+    codeuri = URIRef(ns.term(code))
     g.add((codeuri, RDF.type, OWL.Thing))
     g.add((codeuri, RDF.type, class_))
     if broader is not None:
