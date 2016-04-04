@@ -103,9 +103,9 @@ def setnamespaceprefixes(g):
 def genanzsrc():
     g = Graph()
 
-    g.add((ANZSRC, RDF.type, OWL.Ontology))
-    g.add((ANZSRC, RDFS.label, Literal(u'ANZSRC Base Ontology')))
-    g.add((ANZSRC, RDFS.comment,
+    g.add((URIRef(ANZSRC), RDF.type, OWL.Ontology))
+    g.add((URIRef(ANZSRC), RDFS.label, Literal(u'ANZSRC Base Ontology')))
+    g.add((URIRef(ANZSRC), RDFS.comment,
            Literal(u'An ontology that provides some base definitions for '
                    u'commonly used by all FOR, RFCD, SEO, etc. '
                    u'ontologies.')))
