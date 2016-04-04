@@ -32,6 +32,9 @@ def ontoversion(g, ns):
     # dcterms:hasVersion ponits to another version of the same thing.
     # owl:versionInfo is an annotation property. (might be used to describe
     # changes)
+    if not isinstance(ns, Namespace):
+        ns = Namespace(ns)
+
     g.add((ns, OWL.versionInfo, ns.term(u'0.2')))
     g.add((ns, OWL.priorVersion, ns.term(u'0.1')))
     # g.add((ns, DCTERMS.hasVersion, ns + u'/0.2'))
