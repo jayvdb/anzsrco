@@ -45,6 +45,6 @@ def main():
     fref = URIRef(ANZSRCVIVO)
     ontoannot(g, fref)
     addvivo(g)
-    f = open(OUTPUT_DIR + '/anzsrc_vivo.rdf', 'w')
+    f = open(OUTPUT_DIR + '/anzsrc_vivo.rdf', 'wb')
     g.serialize(f)
     f.close()
