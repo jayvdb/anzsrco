@@ -37,7 +37,7 @@ def gentoa():
                 u'advancement of knowledge.')))
     g.add((toa, SKOS.prefLabel, Literal(u'Pure basic research', lang=u"en")))
     g.add((URIRef(TOA), SKOS.hasTopConcept, toa))
-    g.add((toa, SKOS.inScheme, TOA))
+    g.add((toa, SKOS.inScheme, URIRef(TOA)))
     # Strategic basic research
     toa = TOA.term(u'StrategicBasicResearch')
     g.add((toa, RDF.type, TOA.TOA))
@@ -51,7 +51,7 @@ def gentoa():
                 u'practical problems.')))
     g.add((toa, SKOS.prefLabel, Literal(u'Strategic basic research', lang=u"en")))
     g.add((URIRef(TOA), SKOS.hasTopConcept, toa))
-    g.add((toa, SKOS.inScheme, TOA))
+    g.add((toa, SKOS.inScheme, URIRef(TOA)))
     # Applied research
     toa = TOA.term(u'AppliedResearch')
     g.add((toa, RDF.type, TOA.TOA))
@@ -65,7 +65,7 @@ def gentoa():
                 u'predetermined objectives.')))
     g.add((toa, SKOS.prefLabel, Literal(u'Applied research', lang=u"en")))
     g.add((URIRef(TOA), SKOS.hasTopConcept, toa))
-    g.add((toa, SKOS.inScheme, TOA))
+    g.add((toa, SKOS.inScheme, URIRef(TOA)))
     # Experimental development
     toa = TOA.term(u'ExperimentalDevelopment')
     g.add((toa, RDF.type, TOA.TOA))
@@ -79,5 +79,5 @@ def gentoa():
                 u'already produced or installed.')))
     g.add((toa, SKOS.prefLabel, Literal(u'Experimental development', lang=u"en")))
     g.add((URIRef(TOA), SKOS.hasTopConcept, toa))
-    g.add((toa, SKOS.inScheme, TOA))
+    g.add((toa, SKOS.inScheme, URIRef(TOA)))
     return g
