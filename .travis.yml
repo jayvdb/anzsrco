@@ -14,6 +14,21 @@ env:
   - RDFLIB_VERSION=4.2.1
 
 matrix:
+  exclude:
+    # Python 3 support started with rdflib 3.2.0
+    - python: 3.3
+      env: RDFLIB_VERSION=2.4.1
+    - python: 3.3
+      env: RDFLIB_VERSION=3.0.0
+    - python: 3.3
+      env: RDFLIB_VERSION=3.1.0
+    - python: 3.4
+      env: RDFLIB_VERSION=2.4.1
+    - python: 3.4
+      env: RDFLIB_VERSION=3.0.0
+    - python: 3.4
+      env: RDFLIB_VERSION=3.1.0
+
   allow_failures:
     - env: RDFLIB_VERSION=2.4.1
     - env: RDFLIB_VERSION=4.2.1
