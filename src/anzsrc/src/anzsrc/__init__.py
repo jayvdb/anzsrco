@@ -4,10 +4,10 @@ from rdflib import Namespace, Literal, URIRef, Graph
 ANZSRC = Namespace(u'http://purl.org/asc/1297.0/')
 ANZSRCVIVO = Namespace("http://purl.org/asc/1297.0/vivo.rdf")
 
-SEO = Namespace(u'http://purl.org/asc/1297.0/seo/')
+SEO = ANZSRC[u'seo']
 SEO08 = Namespace(u'http://purl.org/asc/1297.0/2008/seo/')
 SEO98 = Namespace(u'http://purl.org/asc/1297.0/1998/seo/')
-FOR = Namespace(u'http://purl.org/asc/1297.0/for/')
+FOR = ANZSRC[u'for']
 FOR08 = Namespace(u'http://purl.org/asc/1297.0/2008/for/')
 RFCD = Namespace(u'http://purl.org/asc/1297.0/1998/rfcd/')
 TOA = Namespace(u'http://purl.org/asc/1297.0/1993/toa/')
