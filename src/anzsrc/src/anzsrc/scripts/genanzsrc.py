@@ -11,10 +11,12 @@ def genoutput(gengraph, fname, base):
     g = gengraph()
     setnamespaceprefixes(g)
     f = open(OUTPUT_DIR + "/" + fname + '.rdf', 'w')
-    g.serialize(f, format='xml')
+    out = g.serialize(None, format='xml')
+    f.write(out)
     f.close()
     f = open(OUTPUT_DIR + "/" + fname + '.n3', 'w')
-    g.serialize(f, format='n3')
+    out = g.serialize(None, format='n3')
+    f.write(out)
     f.close()
 
 
